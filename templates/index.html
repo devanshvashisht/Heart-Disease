@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100">
     <div class="min-h-screen flex items-center justify-center">
-        <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+        <div class="bg-white p-8 rounded shadow-md w-full max-w-4xl">
             <!-- Navbar -->
             <nav class="bg-red-700 p-4 fixed top-0 left-0 w-full z-10">
                 <div class="flex justify-center">
@@ -16,12 +16,12 @@
                 </div>
             </nav>
             
-        
             <!-- Navbar ends here -->
             <!-- Form starts here -->
-            <form id="prediction-form" class="space-y-4 mt-20">
+            <form id="prediction-form" class="space-y-4 mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label for="name" class="block text-gray-700">Name:</label>
+                    
+                    <label for="name" class="block text-gray-700 mt-4">Name:</label>
                     <input type="text" id="name" name="name" class="w-full border border-gray-300 p-2 rounded focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300 ease-in-out" required>
                 </div>
                 <div>
@@ -37,71 +37,69 @@
                     </select>
                 </div>
                 <div>
-                    <label for="chestPainType" class="block text-gray-700">Chest Pain Type</label>
+                    <label for="chestPainType" class="block text-gray-700">Chest Pain Type:</label>
                     <select id="chestPainType" name="chestPainType" class="w-full border border-gray-300 p-2 rounded focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300 ease-in-out" required>
                         <option value="" disabled selected>Select</option>
-                        <option value="1">Typical Anigna</option>
+                        <option value="1">Typical Angina</option>
                         <option value="2">Atypical Angina</option>
                         <option value="3">Non-Anginal Pain</option>
                         <option value="4">Asymptomatic</option>
                     </select>
-                </div>   
+                </div>
                 <div>
-                    <label for="restingBp" class="block text-gray-700">Resting blood pressure:</label>
+                    <label for="restingBp" class="block text-gray-700">Resting Blood Pressure:</label>
                     <input type="number" id="restingBp" name="restingBp" class="w-full border border-gray-300 p-2 rounded focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300 ease-in-out" required>
                 </div>
                 <div>
-                    <label for="cholestrol" class="block text-gray-700">Cholestrol:</label>
+                    <label for="cholestrol" class="block text-gray-700">Cholesterol:</label>
                     <input type="number" id="cholestrol" name="cholestrol" class="w-full border border-gray-300 p-2 rounded focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300 ease-in-out" required>
                 </div>
-
                 <div>
-                    <label for="fastingBloodsugar" class="block text-gray-700">Blood Sugar(Fasting):</label>
+                    <label for="fastingBloodsugar" class="block text-gray-700">Blood Sugar (Fasting):</label>
                     <select id="fastingBloodsugar" name="fastingBloodsugar" class="w-full border border-gray-300 p-2 rounded focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300 ease-in-out" required>
                         <option value="" disabled selected>Select</option>
                         <option value="0">Less than 120</option>
                         <option value="1">Greater than 120</option>
                     </select>
-                </div> 
+                </div>
                 <div>
                     <label for="restingECG" class="block text-gray-700">Resting ECG:</label>
                     <select id="restingECG" name="restingECG" class="w-full border border-gray-300 p-2 rounded focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300 ease-in-out" required>
                         <option value="" disabled selected>Select</option>
                         <option value="0">Normal</option>
-                        <option value="1">Having ST-T wave abnormality</option>
-                        <option value="2">Showing probable or definite left ventricular hypertrophy</option>
+                        <option value="1">Having ST-T Wave Abnormality</option>
+                        <option value="2">Showing Probable or Definite Left Ventricular Hypertrophy</option>
                     </select>
-                </div>   
+                </div>
                 <div>
                     <label for="maxHeartRate" class="block text-gray-700">Maximum Heart Rate:</label>
                     <input type="number" id="maxHeartRate" name="maxHeartRate" class="w-full border border-gray-300 p-2 rounded focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300 ease-in-out" required>
-                </div> 
+                </div>
+                
                 <div>
-                    <label for="exAnigna" class="block text-gray-700">Excercise Induced Anigna:</label>
+                    <label for="oldPeak" class="block text-gray-700">Old Peak:</label>
+                    <input type="number" step="0.1" id="oldPeak" name="oldPeak" class="w-full border border-gray-300 p-2 rounded focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300 ease-in-out" required>
+                </div>
+                <div>
+                    <label for="exAnigna" class="block text-gray-700">Exercise Induced Angina:</label>
                     <select id="exAnigna" name="exAnigna" class="w-full border border-gray-300 p-2 rounded focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300 ease-in-out" required>
                         <option value="" disabled selected>Select</option>
                         <option value="0">No</option>
                         <option value="1">Yes</option>
                     </select>
-                </div> 
-                
-               
-                <div>
-                    <label for="oldPeak" class="block text-gray-700">Old peak:</label>
-                    <input type="number" step="0.1" id="oldPeak" name="oldPeak" class="w-full border border-gray-300 p-2 rounded focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300 ease-in-out" required>
                 </div>
                 <div>
-                    <label for="stSlope" class="block text-gray-700">ST slope:</label>
+                    <label for="stSlope" class="block text-gray-700">ST Slope:</label>
                     <select id="stSlope" name="stSlope" class="w-full border border-gray-300 p-2 rounded focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300 ease-in-out" required>
                         <option value="" disabled selected>Select</option>
                         <option value="1">Upsloping</option>
                         <option value="2">Flat</option>
                         <option value="3">Downsloping</option>
                     </select>
-                </div>   
-                <button type="submit" class="w-full bg-red-700 text-white py-2 rounded border border-transparent hover:bg-red-900 hover:border-white hover:border-2">Predict</button>
+                </div>
+                <button type="submit" class="col-span-2 w-full bg-red-700 text-white py-2 rounded border border-transparent hover:bg-red-900 hover:border-white hover:border-2">Predict</button>
             </form>
-            <!-- form ends here -->
+            <!-- Form ends here -->
             <div id="result" class="mt-6 text-center text-xl font-semibold"></div>
         </div>
     </div>

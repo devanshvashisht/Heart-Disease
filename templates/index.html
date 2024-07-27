@@ -114,7 +114,8 @@
             const result = await response.json();
             const name = document.getElementById('name').value;
             document.getElementById('result').textContent = result.prediction;
-            alert(`Hey, ${name}, you ${result.prediction === 'heart disease' ? 'have' : 'do not have'} a heart disease.`);
+            console.log(result.prediction);
+            alert(`Hey, ${name}, you ${result.prediction === 'Heart disease detected' ? 'have' : 'do not have'} a heart disease.`);
         });
     </script>
 </body>
